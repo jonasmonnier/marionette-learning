@@ -24,6 +24,34 @@ var versionModel = new Backbone.Model({
     version: "0.3"
 });
 
+var UserModel = Backbone.Model.extend({
+    url:"data/user.json"
+});
+
+var UserCollection = Backbone.Collection.extend({
+    url:"data/users.json",
+    model : UserModel
+});
+
+userModel = new UserModel();
+userModel.fetch({
+    success: function(model) {
+        console.log("JSON file load was successful", model.get("name"));
+    },
+    error: function(){
+        console.log('There was some error in loading and processing the JSON file');
+    }
+});
+
+userCollection = new UserCollection();
+userCollection.fetch({
+    success: function(collection) {
+        console.log("JSON file load was successful", collection);
+    },
+    error: function(){
+        console.log('There was some error in loading and processing the JSON file');
+    }
+});
 
 ///////////////
 // Views
@@ -73,6 +101,8 @@ var header = new Header();
 header.on("click:bt-1", function(args){
     console.log("click on bt 1 from", args.view);
     app.rootView.getRegion('content').show(new View1());
+
+
 });
 header.on("click:bt-2", function(args){
     console.log("click on bt 2 from", args.view);
