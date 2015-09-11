@@ -1,6 +1,5 @@
-
 ///////////////
-// Views
+// Layout
 ///////////////
 
 var RootView = Marionette.LayoutView.extend({
@@ -17,11 +16,16 @@ var RootView = Marionette.LayoutView.extend({
     }
 });
 
+///////////////
+// Views
+///////////////
+
 var Header = Marionette.CompositeView.extend({
     template: "#template-header",
     triggers: {
         "click #bt-1": "click:bt-1",
-        "click #bt-2": "click:bt-2"
+        "click #bt-2": "click:bt-2",
+        "click #bt-users": "click:bt-users"
     }
 });
 

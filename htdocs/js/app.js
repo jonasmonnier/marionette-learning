@@ -57,6 +57,10 @@ header.on("click:bt-2", function(args){
     app.rootView.getRegion('content').show(new View2());
 });
 
+header.on("click:bt-users", function(args){
+    loadUsers();
+});
+
 var footer = new Footer({
     model: versionModel
 });
