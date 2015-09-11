@@ -12,6 +12,7 @@ window.AppRoot = app;
 app.on('start', function(options) {
     Backbone.history.start(); // Great time to do this
     console.log('on start');
+    loadUsers();
 });
 
 
@@ -43,18 +44,6 @@ userModel.fetch({
     }
 });
 
-userCollection = new UserCollection();
-userCollection.fetch({
-    success: function(collection) {
-        console.log("JSON file load was successful", collection);
-    },
-    error: function(){
-        console.log('There was some error in loading and processing the JSON file');
-    }
-});
-
-
-
 
 var header = new Header();
 header.on("click:bt-1", function(args){
@@ -79,3 +68,18 @@ app.rootView.getRegion('footer').show(footer);
 AppRoot.start({});
 
 
+function loadUsers()
+{
+    userCollection = new UserCollection();
+    userCollection.fetch({
+        success: function(collection) {
+            console.log("JSON file load was successful", collection);
+
+            var view = new UserListView({collection: collection});
+            app.rootView.getRegion('content').show(view);
+        },
+        error: function(){
+            console.log('There was some error in loading and processing the JSON file');
+        }
+    });
+}

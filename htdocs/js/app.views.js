@@ -41,3 +41,21 @@ var View1 = Marionette.CompositeView.extend({
 var View2 = Marionette.CompositeView.extend({
     template: "#template-view2"
 });
+
+
+var UserView = Marionette.ItemView.extend({
+    tagName: 'li',
+    template: "#template-user",
+
+    serializeData: function() {
+        console.log("serialize", this.model.get("name"));
+        return {
+            text: this.model.get('name')
+        };
+    }
+});
+
+var UserListView = Marionette.CollectionView.extend({
+    childView: UserView,
+    tagName: 'ul'
+});
