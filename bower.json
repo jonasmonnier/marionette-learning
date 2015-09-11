@@ -1,0 +1,6 @@
+{
+    "name": "marionette-learning",
+    "dependencies": {
+        "marionette": "latest"
+    }
+}

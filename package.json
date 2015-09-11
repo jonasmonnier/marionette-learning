@@ -1,0 +1,11 @@
+{
+    "name": "BasicsTools",
+    "author": "Jonas",
+    "description": "Basic tools",
+    "private": true,
+    "devDependencies": {
+        "gulp": "*",
+        "gulp-uglify": "*",
+        "gulp-concat": "*"
+    }
+}

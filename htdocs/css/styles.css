@@ -1,0 +1,23 @@
+body
+{
+
+}
+
+
+#header
+{
+    height: 80px;
+    background-color: #cccccc;
+}
+
+#footer
+{
+    height: 60px;
+    background-color: #cccccc;
+}
+
+#content
+{
+    min-height: 400px;
+    background-color: #ffffff;
+}
