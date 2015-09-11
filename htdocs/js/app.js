@@ -45,17 +45,9 @@ userModel.fetch({
 
 
 var header = new Header();
-header.on("click:bt-1", function(args){
-    console.log("click on bt 1 from", args.view);
-    app.rootView.getRegion('content').show(new View1());
-
-
+header.on("click:bt-home", function(args){
+    window.AppRouter.navigate('#', {trigger: true});
 });
-header.on("click:bt-2", function(args){
-    console.log("click on bt 2 from", args.view);
-    app.rootView.getRegion('content').show(new View2());
-});
-
 header.on("click:bt-users", function(args){
     window.AppRouter.navigate('#users', {trigger: true});
 });

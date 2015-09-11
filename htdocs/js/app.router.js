@@ -1,7 +1,14 @@
 var Router = Marionette.AppRouter.extend({
 
     routes : {
+        "" : "loadHome",
         "users" : "loadUsers"
+    },
+
+    loadHome: function()
+    {
+        var view = new HomeView();
+        app.rootView.getRegion('content').show(view);
     },
 
     loadUsers: function()

@@ -23,8 +23,7 @@ var RootView = Marionette.LayoutView.extend({
 var Header = Marionette.CompositeView.extend({
     template: "#template-header",
     triggers: {
-        "click #bt-1": "click:bt-1",
-        "click #bt-2": "click:bt-2",
+        "click #bt-home": "click:bt-home",
         "click #bt-users": "click:bt-users"
     }
 });
@@ -38,13 +37,10 @@ var Footer = Marionette.CompositeView.extend({
     }
 });
 
-var View1 = Marionette.CompositeView.extend({
-    template: "#template-view1"
+var HomeView = Marionette.CompositeView.extend({
+    template: "#template-home"
 });
 
-var View2 = Marionette.CompositeView.extend({
-    template: "#template-view2"
-});
 
 
 var UserView = Marionette.ItemView.extend({
